@@ -1,0 +1,22 @@
+<div class="add-product-background">
+    <%if (query_actions.process === "edit") { %>
+        <h1 style="padding-top: 10px; margin: auto; border-radius: 10px; margin-bottom: 10px; color: white; background-color: rgb(0, 240, 0);width: 60%;height: 50px;text-align: center;">Product Edited <i class="fa-solid fa-check"></i></h1>
+    <% } %>
+    <h1 style="color: white; text-align: center; margin: 0;">Edit Product Menu</h1>
+    <div class="edit-product-form">
+        <form id="edit-products-inputs">
+            <input disabled type="number" id="product-id-edit" placeholder="Product ID" name="new_product_id" value="<%=product_details_ejs.product_id%>" class="form2-inputs">
+            <input maxlength="28" type="text" placeholder="Product Name" name="new_product_name" value="<%=product_details_ejs.product_name%>" class="form2-inputs">
+            <textarea style="overflow: hidden; border-radius: 20px;" name="new_product_mini_des" class="form2-inputs" placeholder="Mini Description" cols="1" rows="2"><%=product_details_ejs.product_mini_description%></textarea>
+            <textarea style="overflow: hidden; border-radius: 20px;" name="new_product_des" class="form2-inputs" placeholder="Description" cols="1" rows="10"><%=product_details_ejs.product_description%></textarea>
+            <input type="number" placeholder="Product Price" value="<%=product_details_ejs.product_price%>" name="new_product_price" class="form2-inputs">
+            <input type="number" placeholder="Product Discount Price" value="<%=product_details_ejs.product_discount_price%>" name="new_product_discount_price" class="form2-inputs">
+            <h3 style="text-align: center; color: yellow;"><i class="fa-solid fa-exclamation"></i> If you do not want to make a discount, enter this value 0</h3>
+            <input type="text" placeholder="Product Image URL or Image File Name" name="new_product_image" value="<%=product_details_ejs.product_image%>" class="form2-inputs">
+            <button id="form-edit-button" class="form-button">Edit Product</button>
+            <button id="form-remove-button" style="background-color: red;" onmouseleave="this.style='background-color:red'" onmouseover="this.style='background-color:darkred'" class="form-button">Remove Product</button>
+        </form>
+        <h1 id="error-str" style="text-align: center; margin: auto; display: none; color: red;"><i class="fa-solid fa-circle-xmark"></i> Error! Please check your variables.</h1>
+</div>
+<script src="/js/admin/edit-product.js"></script>
+<script src="/js/admin/delete-product.js"></script>

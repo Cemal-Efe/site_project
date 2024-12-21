@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title><%=title%></title>
+</head>
+<body>
+<div class="main-container">
+    <div class="head_menu">
+        <div class="logo" style="width: 300px;"><a class="logo_string" href="/admin.menu">My Shop Admin Menu</a></div>
+        <div class="site_in_links_bar">
+            <a class="head_go_links" href="/admin.menu/add-product">Add Product</a>
+            <a class="head_go_links" href="/admin.menu/edit-product">Product List</a>
+        </div>
+    </div>
+   
+   <div class="main_content">
+        <div class="content" style="min-height: 75.5vh;">
+            <%- include(content,{query_actions:query_action}) %>
+        </div>
+   </div>
+    <div class="alt_menu">
+        <div class="com">
+            <div class="com-details">
+                <span><i class="fa-brands fa-whatsapp"></i>+9055555555</span>
+            </div>
+            <div class="com-details">
+                <span><i class="fa-solid fa-phone"></i>+905055055 </span>
+            </div>
+            <div class="com-details">
+                <span><i class="fa-solid fa-envelope"></i>help@myshop.com</span>
+            </div>
+            <div class="com-details">
+                <a style="color: black;" href="/"><i class="fa-solid fa-house"></i>myshop.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+<script>
+        function setMinHeight() {
+            const body = document.querySelector('body');
+            body.style.minHeight = `${window.innerHeight}px`;
+        }
+
+        // Sayfa yüklendiğinde ve pencere boyutu değiştiğinde fonksiyonu çağır
+        window.onload = setMinHeight;
+        window.onresize = setMinHeight;
+</script>
+
+
+</html>

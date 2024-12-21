@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <link rel="shortcut icon" href="/img/site.ico" type="image/x-icon">
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title><%=title%></title>
+</head>
+<body>
+<div class="main-container">
+        <div class="head_menu">
+                <div class="logo"><a class="logo_string" href="/">My Shop</a></div>
+                <div class="mobile_menu_icon"><i id="menu_icon_id" class="fa-solid fa-bars"></i></div>
+                <div class="site_in_links_bar" id="desktop-menu">
+                    <a class="head_go_links" href="/products">Products</a>
+                    <a class="head_go_links" href="/discount">Discount</a>  
+                    <input class="head_go_links_search" id="search_input" type="text" name="search" placeholder="Type Word For Search">
+                    <button class="head_go_links_search" id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </div>
+                <div class="suggestion"></div>
+            <div class="mobile_site_link" style="display: none;" id="mobile-menu">
+                <ul style=" margin:0;">
+                <li class="mobile_site_links"><a class="head_go_links" href="/products" style="display: block;">Products</a></li>
+                <li class="mobile_site_links"><a class="head_go_links" href="/discount" style="display: block;">Discount</a></li>
+                <li style="margin: 0px;" class="mobile_site_links"><input style="right: 20px;" class="head_go_links_search" id="search_input" type="text" name="search" placeholder="Type Word For Search"></li>
+                <li style="margin: 0px;" class="mobile_site_links"><button style=" position: relative; top:-30px; left: 10px;" class="head_go_links_search" id="search_button"><i class="fa-solid fa-magnifying-glass"></i></button></li>
+            </ul>
+            </div> 
+        </div> 
+    <div class="main_content">
+        <div class="content">
+            <%- include(content, { product_data: product_array, product_detail: product_details_ejs,query_actions: query_action}) %>
+        </div>
+    </div>
+    <div style="position: relative; top: 15px;" class="alt_menu">
+        <div class="com">
+            <div style="display: inline-block;" class="com-details">
+                <span><i class="fa-brands fa-whatsapp"></i>+9055555555</span>
+            </div>
+            <div style="display: inline-block;" class="com-details">
+                <span><i class="fa-solid fa-phone"></i>+905055055</span>
+            </div>
+            <div style="display: inline-block;" class="com-details">
+                <span><i class="fa-solid fa-envelope"></i>help@myshop.com</span>
+            </div>
+            <div style="display: inline-block;" class="com-details">
+                <a style="color: black;" href="/"><i class="fa-solid fa-house"></i>myshop.com</a>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/js/user/mobile_display.js"></script>
+<script>
+    document.querySelector("#search_button").addEventListener("click",()=>
+        {
+            const search_inp = document.querySelector("#search_input")
+            console.log("Butona tıklandı: Arama değeri: " + search_inp.value);  
+            window.open(`products?search_input=${search_inp.value}`,"_self")
+            alert("hi")
+        }
+    )
+</script>
+</body>
+</html>

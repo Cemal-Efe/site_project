@@ -1,0 +1,20 @@
+<div class="add-product-background">
+    <%if (query_actions.process === "add_item") { %>
+        <h1 style="padding-top: 10px; margin: auto; border-radius: 10px; margin-bottom: 10px; color: white; background-color: rgb(0, 240, 0);width: 60%;height: 50px;text-align: center;">Product Added <i class="fa-solid fa-check"></i></h1>
+    <% } %>
+    <h1 style="color: white;text-align: center;margin: 0px;">Add Product Menu</h1>
+    <div class="add-product-form">
+        <form id="add-products">
+            <input type="number" placeholder="Product ID" name="new_product_id" class="form-input">
+            <input type="text" maxlength="28" placeholder="Product Name" name="new_product_name" class="form-input">
+            <textarea style="overflow: hidden; border-radius: 20px;" name="new_product_mini_des" class="form-input" placeholder="Mini Description" cols="1" rows="2"></textarea>
+            <textarea style="overflow: hidden; border-radius: 20px;" name="new_product_des" class="form-input" placeholder="Description" cols="1" rows="10"></textarea>
+            <input type="number" placeholder="Product Price" name="new_product_price" class="form-input">
+            <input type="number" placeholder="Product Discount Price" value="0" name="new_product_discount_price" class="form-input">
+            <h3 style="text-align: center;color:yellow;"><i class="fa-solid fa-exclamation"></i>  If you do not want to make a discount, enter this value 0</h3>
+            <input type="text" placeholder="Product Image Url or Image File Name" name="new_product_image" id="" class="form-input">
+            <button id="form-sumbit-button-add-product" class="form-button">Add Product</button>
+        </form>
+    </div>
+</div>
+<script src="/js/admin/add-product.js"></script>

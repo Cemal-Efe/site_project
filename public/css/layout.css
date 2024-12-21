@@ -1,0 +1,200 @@
+@import url("card.css");
+@import url("product_deatils.css");
+@import url("add-product-menu.css");
+@import url("mobile_layout.css");
+body {
+    overflow-x: hidden; /* Yatay kaydırmayı gizler */
+    min-height: 100vh;
+    width: 100%;
+    margin: 0;          /* Varsayılan margin'leri sıfırlayın */
+    padding: 0;         /* Varsayılan padding'leri sıfırlayın */
+}
+.main-container
+{
+    max-width: 1366px;
+    max-height: 1080px;
+    margin: auto;
+}
+.head_menu
+{
+    z-index: 4;
+    display: inline-block;
+    position: fixed;
+    width: 100%;
+    min-height: 80px;
+    max-width: 1366px;
+    height: auto;
+    box-shadow: 0px 10px 20px rgb(27, 130, 136);
+    background-color: aquamarine;
+}
+.mobile_menu_icon
+{
+    transition: 300ms;
+    font-size: x-large;
+    float: right;
+    position: relative;
+    right: 20px;
+    bottom: 20px;
+    color: white;
+    text-align: center;
+}
+.mobile_menu_icon:hover
+{
+    transition: 300ms;
+    color: rgb(8, 8, 8);
+    cursor: pointer;
+}
+.logo
+{
+    margin-bottom: 30px;
+    text-align: center;
+    width: 120px;
+    top: 30px;
+    left: 10px;
+    position: relative;
+}
+.logo_string{
+    display: inline-block;
+    transition: 300ms;
+    text-decoration: none;
+    color: white;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+.logo_string:hover
+{
+    color: rgb(8, 8, 8);
+    transition: 300ms;
+}
+.site_in_links_bar
+{
+    width: 70%;
+    height: 55%;
+    top: -25px;
+    float: right;
+    position: relative;
+    margin-right: 20px;
+}
+.head_go_links
+{
+    padding: 3px;
+    border: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    position: relative;
+    top: 30%;
+    margin-right: 10%;
+    color:white;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    transition: 300ms;
+}
+
+.head_go_links:hover{
+    color:black;
+    border-color: black;
+    transition: 300ms;
+}
+.main_content
+{
+    padding-top: 80px;
+   
+}
+.content
+{
+    min-height: 81.9vh;
+    background-color: rgb(255, 255, 255);
+}
+.alt_menu
+{
+    display: inline-block;
+    width: 100%;
+    min-height: 80px;
+    height: auto;
+    box-shadow: 0px -10px 20px rgb(27, 130, 136);
+    background-color: aquamarine;   
+}
+.com
+{
+    display: block;
+    margin-top: 20px;
+    margin: auto;
+    width: 100%;
+    height: auto;
+}
+.com-details
+{
+    display: inline-block;
+    position: relative;
+    /*top: 10px;*/
+    width: 150px;
+    height: auto;
+    color: rgb(0, 0, 0);
+    margin-top: 12px;
+    margin-left: 10%;
+}
+.go-all-product
+{
+    
+    text-align: center; 
+    transition: 600ms; 
+    margin-left: 10px; 
+    border-style: solid;
+    padding: 5px;
+    border-radius: 50px; 
+    color: black;
+    text-decoration: none;
+}
+#search_input
+{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    width: 250px;
+    position: relative;
+    float: right;
+    right: 27%;
+    top: -5px;
+}
+#search_button
+{
+    z-index: 9999;
+    position: relative;
+    border: 0px;
+    color: black;
+    left: 90px;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    float: right;
+    margin-left: 10PX;
+    top: -5px;
+}
+#search_button:hover
+{
+    cursor: pointer;
+}
+.head_go_links_search
+{
+    padding: 3px;
+    border: 2px;
+    border-radius: 10px;
+    border-style: solid;
+    border-color: white;
+    position: relative;
+    top: 30%;
+    margin-right: 10%;
+    color:white;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    transition: 300ms;
+}
+.head_go_links_search:hover
+{
+    color:black;
+    border-color: black;
+    transition: 300ms;
+}
+

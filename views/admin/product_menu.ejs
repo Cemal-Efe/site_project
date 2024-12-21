@@ -1,0 +1,25 @@
+<% for( let index = 0; index < product_data.length; index++ ) { %>
+    <div class="card-border">
+        <div class="card-image">
+            <img src="/img/<%=product_data[index].product_image%>" alt="Image not found">
+        </div> <div class="line"></div>
+        <div class="header-string">
+            <h3><%=product_data[index].product_name%></h3>
+        </div>
+        <div class="description-string">
+            <h4><%=product_data[index].product_mini_description%></h4>
+        </div><div class="line"></div>
+        <div class="card-button-area">
+            <% if (product_data[index].product_discount == true) { %>
+                <span style="position: relative; top: 12px;left: 10px; color: orangered;font-size: xx-large;"><i class="fa-solid fa-percent"></i></span>
+            <% } %>
+            <a class="button" href="edit-product/<%=product_data[index].product_id%>">Edit></a>
+        </div>
+    </div>
+<% } %>
+<% if (product_data.length == 0) { %>
+    <div style="margin: auto;">
+        <p style="margin-bottom: 0px; text-align: center;font-size: 100px;">Hey, can anybody hear my voice?</p>
+        <p style="margin-bottom: 0px; margin-top: 0px; text-align: center;font-size: 200px;"><i class="fa-regular fa-face-sad-tear"></i></p>
+    </div>
+<% } %>

@@ -1,0 +1,38 @@
+<% if (query_action.status == "Server_Error") { %>
+    <h1 style="padding-top: 22.5px; margin: 0; color: white; background-color: red; height: 70px;width: 100%;text-align: center;">Server Error Plase Try Later</h1>
+<% } %>
+<% 
+let random_product_list = [];
+let temp_product_data = [...product_data]; // Orijinal diziyi kopyala
+
+while (temp_product_data.length > 0) {
+    let randomInteger = Math.floor(Math.random() * temp_product_data.length); // Geçici dizinin uzunluğuna göre rastgele sayı üret
+    random_product_list.push(temp_product_data[randomInteger]); // Rastgele ürünü ekle
+    temp_product_data.splice(randomInteger, 1); // Rastgele ürünü diziden sil
+}
+%>
+<% for( let index = 0; index < random_product_list.length; index++ ) { %>
+    <div class="card-border">
+        <div class="card-image">
+            <img src="/img/<%=random_product_list[index].product_image%>" alt="Image not found">
+        </div> <div class="line"></div>
+        <div class="header-string">
+            <h3><%=random_product_list[index].product_name%></h3>
+        </div>
+        <div class="description-string">
+            <h4><%=random_product_list[index].product_mini_description%></h4>
+        </div><div class="line"></div>
+        <div class="card-button-area">
+            <% if (random_product_list[index].product_discount == true) { %>
+                <span style="position: relative; top: 12px;left: 10px; color: orangered;font-size: xx-large;"><i class="fa-solid fa-percent"></i></span>
+            <% } %>
+            <a class="button" href="products/<%=random_product_list[index].product_id%>">Go Details></a>
+        </div>
+    </div>
+<% } %>
+<% if (random_product_list.length == 0) { %>
+    <div style="margin: auto;">
+        <p style="margin-bottom: 0px; text-align: center;font-size: 100px;">Hey, can anybody hear my voice?</p>
+        <p style="margin-bottom: 0px; margin-top: 0px; text-align: center;font-size: 200px;"><i class="fa-regular fa-face-sad-tear"></i></p>
+    </div>
+<% } %>

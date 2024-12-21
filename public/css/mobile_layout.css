@@ -1,0 +1,9 @@
+.mobile_site_links
+{
+    list-style: none;
+    position: relative;
+    top: 2px;
+    margin-bottom:20px;
+    /*padding: 10px;*/
+    text-align: center;
+}

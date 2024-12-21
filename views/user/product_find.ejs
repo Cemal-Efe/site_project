@@ -1,0 +1,34 @@
+<% if (product_data.length==1) { %>
+        <div style="margin: auto;">
+            <p style="margin-bottom: 0px; text-align: center;font-size: 100px;">Plase Check Keywords</p>
+            <p style="margin-bottom: 0px; margin-top: 0px; text-align: center;font-size: 200px;"><i
+                    class="fa-regular fa-face-sad-tear"></i></p>
+        </div>
+        <% } else { %>
+            <% for( let index=0; index < product_data.length; index++ ) { %>
+                <div class="card-border">
+                    <div class="card-image">
+                        <img src="/img/<%=product_data[index].product_image%>" alt="Image not found">
+                    </div>
+                    <div class="line"></div>
+                    <div class="header-string">
+                        <h3>
+                            <%=product_data[index].product_name%>
+                        </h3>
+                    </div>
+                    <div class="description-string">
+                        <h4>
+                            <%=product_data[index].product_mini_description%>
+                        </h4>
+                    </div>
+                    <div class="line"></div>
+                    <div class="card-button-area">
+                        <% if (product_data[index].product_discount==true) { %>
+                            <span
+                                style="position: relative; top: 12px;left: 10px; color: orangered;font-size: xx-large;"><i
+                                    class="fa-solid fa-percent"></i></span>
+                            <% } %>
+                                <a class="button" href="products/<%=product_data[index].product_id%>">Go Details></a>
+                    </div>
+                </div>
+                <% } }%>
