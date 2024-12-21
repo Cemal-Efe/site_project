@@ -3,7 +3,7 @@ const connect_data = {
     host: 'localhost',
     user: 'root',
     database : 'node-app-test',
-    password : 'cemal7769'
+    password : 'secret baby sorry :)'
 }
 const db_connection = mysql.createConnection(connect_data);
 module.exports = db_connection.promise();
